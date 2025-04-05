@@ -1,4 +1,4 @@
-# News Search Engine
+# Smart Article Search
 
 This project is a simple news search engine built using **FastAPI**, **Streamlit**, and **Elasticsearch**. It allows users to index and search for articles through a web interface, making it an ideal showcase for utilizing Elasticsearch in a real-world application.
 
@@ -56,9 +56,10 @@ docker-compose down
 │   ├── db/
 │   │   ├── insert_data.py
 │   ├── main.py               # FastAPI app entry point
+    │── Dockerfile                # Dockerfile for building the backend
 │── frontend/                 # Streamlit interface
 │   ├── app.py                # Main Streamlit file
-│── Dockerfile                # Dockerfile for building the application
+    │── Dockerfile                # Dockerfile for building the frontend
 │── docker-compose.yml        # Docker Compose configuration
 │── requirements.txt          # List of required Python packages
 │── .env                      # Environment variables for configuration
