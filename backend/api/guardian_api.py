@@ -6,8 +6,7 @@ import os
 # Load environment variables from .env file
 load_dotenv()
 API_KEY = os.getenv('API_KEY')
-
-BASE_URL = "https://content.guardianapis.com/search"
+BASE_URL = os.getenv('BASE_URL')
 
 def fetch_guardian_articles(query, page, page_size)-> dict:
     """
