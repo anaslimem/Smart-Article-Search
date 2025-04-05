@@ -2,12 +2,19 @@ import streamlit as st
 import requests
 from datetime import datetime
 from elasticsearch import Elasticsearch
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
+
+es_url = os.getenv("ES_URL")
 
 # Initialize Elasticsearch client
-es = Elasticsearch("http://elasticsearch:9200")
+es = Elasticsearch(es_url)
 
 # Set the base URL of your FastAPI backend
-BASE_URL = "http://backend:8000"  # Adjust if your server runs elsewhere
+BASE_URL = os.getenv("BASE_URL")  
 
 def index_articles(query, page_size):
     url = f"{BASE_URL}/index_articles"
