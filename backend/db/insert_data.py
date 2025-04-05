@@ -1,10 +1,13 @@
 from elasticsearch import Elasticsearch
 from backend.api.guardian_api import fetch_guardian_articles
+from dotenv import load_dotenv
 import os,sys
 
 # Add the parent directory to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-es = Elasticsearch("http://elasticsearch:9200")
+
+es_url = os.getenv("ES_URL")
+es = Elasticsearch(es_url)
 
 def index_articles(query, page_size):
     """
