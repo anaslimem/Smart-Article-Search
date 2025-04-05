@@ -27,8 +27,8 @@ Before running the project, make sure you have the following installed:
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
-cd <your-repository-folder>
+git clone https://github.com/anaslimem/Smart-Article-Search.git
+cd Smart-Article-Search
 ```
 ### 2. Build and Start the Docker Containers
 
