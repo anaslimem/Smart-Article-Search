@@ -1,0 +1,6 @@
+streamlit
+requests
+elasticsearch
+python-dotenv
+fastapi
+uvicorn
