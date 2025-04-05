@@ -2,11 +2,18 @@ from fastapi import APIRouter, HTTPException
 from elasticsearch import Elasticsearch
 from elasticsearch.exceptions import NotFoundError
 from backend.db.insert_data import index_articles
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
+# Get environment variables
+es_url = os.getenv("ES_URL")
 
 router = APIRouter()
 
 # Initialize Elasticsearch client
-es = Elasticsearch("http://elasticsearch:9200")
+es = Elasticsearch(es_url)
 
 @router.get("/index_articles")
 async def index_articles_route(query: str, page_size: int):
