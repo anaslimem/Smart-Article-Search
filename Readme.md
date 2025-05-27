@@ -68,20 +68,27 @@ minikube dashboard
 
 ## Project Structure
 ```bash
-│── backend/                  # Backend logic
-│   ├── api/                  # API-related files
-│   │   ├── routes.py
-│   │   ├── guardian_api.py
-│   │   ├── models.py
-│   ├── db/
-│   │   ├── insert_data.py
-│   ├── main.py               # FastAPI app entry point
-    │── Dockerfile                # Dockerfile for building the backend
-│── frontend/                 # Streamlit interface
-│   ├── app.py                # Main Streamlit file
-    │── Dockerfile                # Dockerfile for building the frontend
-│── docker-compose.yml        # Docker Compose configuration
-│── requirements.txt          # List of required Python packages
-│── .env                      # Environment variables for configuration
-│── README.md                 # Project documentation
+│── backend/                  # Backend logic (FastAPI)
+│   ├── api/                  # API routes and models
+│   ├── db/                   # Database interaction scripts
+│   ├── main.py               # FastAPI entrypoint
+│   ├── Dockerfile            # Backend Dockerfile
+│── frontend/                 # Streamlit frontend interface
+│   ├── app.py                # Main frontend app
+│   ├── Dockerfile            # Frontend Dockerfile
+│── elasticsearch/            # Elasticsearch container setup (optional customization)
+│   ├── Dockerfile            # Elasticsearch Dockerfile (if customized)
+│── k8s/                      # Kubernetes manifests
+│   ├── backend-deployment.yaml
+│   ├── backend-service.yaml
+│   ├── frontend-deployment.yaml
+│   ├── frontend-service.yaml
+│   ├── elasticsearch-deployment.yaml
+│   ├── elasticsearch-service.yaml
+│   ├── app-configmaps.yaml
+│   ├── app-secrets.yaml
+│── README.md                 # Project documentation (updated)
+│── requirements.txt          # Python dependencies
+│── .env                      # Environment variables (for local or Docker use)
+
 ```
