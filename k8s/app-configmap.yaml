@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  BACKEND_PORT: "8000"
+  ELASTICSEARCH_HOST: "elasticsearch-service:9200"
+  FRONTEND_PORT: "3000"
+  ES_URL: "http://elasticsearch-service:9200"
+  BASE_URL: "http://backend-service:8000"
